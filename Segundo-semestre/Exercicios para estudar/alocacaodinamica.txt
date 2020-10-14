@@ -1,0 +1,32 @@
+Dois ponteiros para um guardar o ínicio e outro o fim. 
+--------------------------------------------------------------------------------------------------------------------------
+*FUNÇÃO MALLOC:
+malloc retorna um ponteiro do tipo void é necessário um casting para forçar ele a voltar com o tipo que queremos:
+
+int *p= (int *) //casting malloc(sizeof(x)); //alocação de memoria //melhor usar o tipo quando for alocar 
+
+No caso de vetor é só multiplicar antes do sizeof o tamanho do vetor:
+
+int *p= (int *) malloc(10 * sizeof(y)); //o vetor foi alocado 
+
+OBS: A função malloc não limpa o lixo de memória que foi alocada.
+
+Se malloc retorna NULL não foi alocada a memória: 
+
+if(*p == NULL)
+	printf("Não foi alocado");
+------------------------------------------------------------------------------------------------------------------------
+*FUNÇÃO FREE:
+
+int *p= (int *) malloc(10 * sizeof(y))
+
+free(p); //não limpa a memória apenas desaloca e não muda o lugar para onde o ponteiro está apontando.
+
+foi desalocado, quando o programa fecha tbm é desalocado.
+---------------------------------------------------------------------------------------------------------------------------*FUNÇÃO REALLOC:
+
+procura um espaço da memória para add a qtd de espaços desejados.
+
+p=realloc(p, m * sizeof(int)); //sendo p o ponteiro, m o tamanho novo que será realocado e int o tipo de dado a ser armazenado, é necessário por causa da qtd de espaços que precisa ser add por isso a multiplicação.
+---------------------------------------------------------------------------------------------------------------------------
+*FUNÇÃO CALLOC:
